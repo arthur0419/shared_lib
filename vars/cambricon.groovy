@@ -14,7 +14,7 @@ def call(Map config) {
                 debug = config.debug
             }
         }
-        echo "${debug}"
+        // echo "${debug}"
         echo "${config.debug}"
 
         // echo 'Cambricon build config:'
