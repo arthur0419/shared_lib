@@ -46,6 +46,11 @@ def call(Closure callable) {
                     echo 'doing build release version'
                 }
             }
+            if (config.test) {
+                stage('test') {
+                    echo 'doing test'
+                }
+            }
         }
     
     } 
