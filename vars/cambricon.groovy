@@ -80,33 +80,20 @@ def call(Closure callable) {
             
             if (test) {
                 stage('test') {
-                    echo 'doing test'
-                    println("Test Config:");
-                    test.each {
-                        println(it.key + " : " + it.value)
-                    }
+                    // echo 'doing test'
+                    // println("Test Config:");
+                    // test.each {
+                    //     println(it.key + " : " + it.value)
+                    // }
 
-                    def count = 0
-                    if (test.caffe) {
-                        count++
-                    }
-                    if (test.tensorflow) {
-                        count++
-                    }
-                    if (count == 1) {
-                        if (test.caffe) {
-                            stage('caffe') {
-                                echo 'doing caffe test'
-                            }
-                        }
-                        if (test.tensorflow) {
-                            stage('tensorflow') {
-                                echo 'doing tensorflow test'
-                            }
-                        }
-                    } 
-
-                    // parallel {
+                    // def count = 0
+                    // if (test.caffe) {
+                    //     count++
+                    // }
+                    // if (test.tensorflow) {
+                    //     count++
+                    // }
+                    // if (count == 1) {
                     //     if (test.caffe) {
                     //         stage('caffe') {
                     //             echo 'doing caffe test'
@@ -117,7 +104,16 @@ def call(Closure callable) {
                     //             echo 'doing tensorflow test'
                     //         }
                     //     }
-                    // }
+                    // } 
+
+                    parallel {
+                        stage('caffe') {
+                            echo 'doing caffe test'
+                        }
+                        stage('tensorflow') {
+                            echo 'doing tensorflow test'
+                        }
+                    }
 
                 }
             }
