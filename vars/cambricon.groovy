@@ -108,12 +108,12 @@ def call(Closure callable) {
 
                     if (count == 2) {
                         def buildStages = [:]
-                        buildStages.put('caffe', {
+                        buildStages.put('caffe111', {
                             stage('caffe') {
                                 echo 'doing caffe test'
                             }
                         })
-                        buildStages.put('tensorflow', {
+                        buildStages.put('tensorflow111', {
                             stage('tensorflow') {
                                 echo 'doing tensorflow test'
                             }
