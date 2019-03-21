@@ -13,10 +13,22 @@ def call(Map config) {
         //     echo "${config.debug}"
         //     echo 'do somthing in Cambricon'
         // }
-        stage('build') {
-            steps {
-                echo 'cambricon build!'
-                helloworld 'jenkins'
+
+        pipeline {
+            agent any
+            stages {
+                stage('build') {
+                    steps {
+                        echo "doing cambricon build"
+                    }
+                }
+                if (config.test) {
+                    stage('test') {
+                        steps {
+                            echo "doing cambricon test"
+                        }
+                    }
+                }
             }
         }
     
