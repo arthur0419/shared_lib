@@ -38,14 +38,14 @@ def call(Closure callable) {
         callable.delegate = config;
         callable.call()
 
-        // def build = null
+        def build = null
 
-        // if (config.build) {
-        //     build = [:]
-        //     config.build.resolveStrategy = Closure.DELEGATE_FIRST
-        //     config.build.delegate = build
-        //     config.build()
-        // }
+        if (config.build) {
+            build = [:]
+            config.build.resolveStrategy = Closure.DELEGATE_FIRST
+            config.build.delegate = build
+            config.build()
+        }
 
         node {
             stage('prepare') {
@@ -56,20 +56,20 @@ def call(Closure callable) {
                 }
             }
 
-            // if (build) {
-            //     stage('build') {
-            //         if (build.debug) {
-            //             echo 'doing build debug version'
-            //         } else {
-            //             echo 'doing build release version'
-            //         }
+            if (build) {
+                stage('build') {
+                    if (build.debug) {
+                        echo 'doing build debug version'
+                    } else {
+                        echo 'doing build release version'
+                    }
 
-            //         println("Build Config:");
-            //         build.each {
-            //             println(it.key + " : " + it.value)
-            //         }
-            //     }
-            // }
+                    println("Build Config:");
+                    build.each {
+                        println(it.key + " : " + it.value)
+                    }
+                }
+            }
             
             if (config.test) {
                 stage('test') {
