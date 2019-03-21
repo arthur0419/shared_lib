@@ -62,7 +62,7 @@ def call(Closure callable) {
                     println(it.key + " : " + it.value)
                 }
             }
-
+            
             if (build) {
                 stage('build') {
                     if (build.debug) {
@@ -84,6 +84,19 @@ def call(Closure callable) {
                     println("Test Config:");
                     test.each {
                         println(it.key + " : " + it.value)
+                    }
+
+                    parallel {
+                        if (test.caffe) {
+                            stage('caffe') {
+                                echo 'doing caffe test'
+                            }
+                        }
+                        if (test.tensorflow) {
+                            stage('tensorflow') {
+                                echo 'doing tensorflow test'
+                            }
+                        }
                     }
 
                 }
