@@ -38,14 +38,39 @@ def call(Closure callable) {
         callable.delegate = config;
         callable.call()
 
+        def build = null
+
+        if (config.build) {
+            build = [:]
+            config.build.resolveStrategy = Closure.DELEGATE_FIRST
+            config.build.delegate = build
+            config.build()
+        }
+
         node {
-            stage('build') {
-                if (config.debug) {
-                    echo 'doing build debug version'
-                } else {
-                    echo 'doing build release version'
+            stage('prepare') {
+                echo 'doing prepare'
+                println("Cambricon Config:");
+                config.each {
+                    println(it.key + " : " + it.value)
                 }
             }
+
+            if (build) {
+                stage('build') {
+                    if (build.debug) {
+                        echo 'doing build debug version'
+                    } else {
+                        echo 'doing build release version'
+                    }
+
+                    println("Build Config:");
+                    build.each {
+                        println(it.key + " : " + it.value)
+                    }
+                }
+            }
+            
             if (config.test) {
                 stage('test') {
                     echo 'doing test'
