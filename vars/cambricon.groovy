@@ -86,7 +86,14 @@ def call(Closure callable) {
                         println(it.key + " : " + it.value)
                     }
 
-                    parallel {
+                    def count = 0
+                    if (test.caffe) {
+                        count++
+                    }
+                    if (test.tensorflow) {
+                        count++
+                    }
+                    if (count == 1) {
                         if (test.caffe) {
                             stage('caffe') {
                                 echo 'doing caffe test'
@@ -97,7 +104,20 @@ def call(Closure callable) {
                                 echo 'doing tensorflow test'
                             }
                         }
-                    }
+                    } 
+
+                    // parallel {
+                    //     if (test.caffe) {
+                    //         stage('caffe') {
+                    //             echo 'doing caffe test'
+                    //         }
+                    //     }
+                    //     if (test.tensorflow) {
+                    //         stage('tensorflow') {
+                    //             echo 'doing tensorflow test'
+                    //         }
+                    //     }
+                    // }
 
                 }
             }
