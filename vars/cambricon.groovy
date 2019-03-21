@@ -46,6 +46,13 @@ def call(Closure callable) {
             config.build.delegate = build
             config.build()
         }
+        def test = null
+        if (config.test) {
+            test = [:]
+            config.test.resolveStrategy = Closure.DELEGATE_FIRST
+            config.test.delegate = test
+            config.test()
+        }
 
         node {
             stage('prepare') {
@@ -71,9 +78,14 @@ def call(Closure callable) {
                 }
             }
             
-            if (config.test) {
+            if (test) {
                 stage('test') {
                     echo 'doing test'
+                    println("Test Config:");
+                    test.each {
+                        println(it.key + " : " + it.value)
+                    }
+
                 }
             }
         }
