@@ -22,11 +22,12 @@ def call(Map config) {
                         echo "doing cambricon build"
                     }
                 }
-                if (config.test) {
-                    stage('test') {
-                        steps {
-                            echo "doing cambricon test"
-                        }
+                stage('test') {
+                    when {
+                        expression {return config.test}
+                    }
+                    steps {
+                        echo "doing cambricon test"
                     }
                 }
             }
