@@ -106,14 +106,28 @@ def call(Closure callable) {
                     //     }
                     // } 
 
-                    parallel {
+                    def buildStages = [:]
+                    buildStages.put('caffe', {
                         stage('caffe') {
                             echo 'doing caffe test'
                         }
+                    })
+                    buildStages.put('tensorflow', {
                         stage('tensorflow') {
                             echo 'doing tensorflow test'
                         }
-                    }
+                    })
+
+                    parallel(buildStages)
+
+                    // parallel {
+                    //     stage('caffe') {
+                    //         echo 'doing caffe test'
+                    //     }
+                    //     stage('tensorflow') {
+                    //         echo 'doing tensorflow test'
+                    //     }
+                    // }
 
                 }
             }
