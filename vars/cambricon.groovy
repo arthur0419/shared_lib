@@ -110,13 +110,11 @@ def call(Closure callable) {
                         def buildStages = [:]
                         buildStages.put('caffe', {
                             stage('caffe') {
-                                stages {
-                                    stage('caffe_build') {
-                                        echo 'doing caffe build'
-                                    }
-                                    stage('caffe_test') {
-                                        echo 'doing caffe test'
-                                    }
+                                stage('caffe_build') {
+                                    echo 'doing caffe build'
+                                }
+                                stage('caffe_test') {
+                                    echo 'doing caffe test'
                                 }
                             }
                         })
