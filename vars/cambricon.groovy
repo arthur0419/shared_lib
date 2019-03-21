@@ -86,39 +86,41 @@ def call(Closure callable) {
                     //     println(it.key + " : " + it.value)
                     // }
 
-                    // def count = 0
-                    // if (test.caffe) {
-                    //     count++
-                    // }
-                    // if (test.tensorflow) {
-                    //     count++
-                    // }
-                    // if (count == 1) {
-                    //     if (test.caffe) {
-                    //         stage('caffe') {
-                    //             echo 'doing caffe test'
-                    //         }
-                    //     }
-                    //     if (test.tensorflow) {
-                    //         stage('tensorflow') {
-                    //             echo 'doing tensorflow test'
-                    //         }
-                    //     }
-                    // } 
-
-                    def buildStages = [:]
-                    buildStages.put('caffe', {
-                        stage('caffe') {
-                            echo 'doing caffe test'
+                    def count = 0
+                    if (test.caffe) {
+                        count++
+                    }
+                    if (test.tensorflow) {
+                        count++
+                    }
+                    if (count == 1) {
+                        if (test.caffe) {
+                            stage('caffe') {
+                                echo 'doing caffe test'
+                            }
                         }
-                    })
-                    buildStages.put('tensorflow', {
-                        stage('tensorflow') {
-                            echo 'doing tensorflow test'
+                        if (test.tensorflow) {
+                            stage('tensorflow') {
+                                echo 'doing tensorflow test'
+                            }
                         }
-                    })
+                    } 
 
-                    parallel(buildStages)
+                    if (count == 2) {
+                        def buildStages = [:]
+                        buildStages.put('caffe', {
+                            stage('caffe') {
+                                echo 'doing caffe test'
+                            }
+                        })
+                        buildStages.put('tensorflow', {
+                            stage('tensorflow') {
+                                echo 'doing tensorflow test'
+                            }
+                        })
+
+                        parallel(buildStages)
+                    }
 
                     // parallel {
                     //     stage('caffe') {
