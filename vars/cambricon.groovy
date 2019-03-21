@@ -1,4 +1,4 @@
-def call(Map config) {
+def call(Closure callable) {
         // script {
         //     def debug = true
         //     echo 'Cambricon Config:'
@@ -32,6 +32,11 @@ def call(Map config) {
         //         }
         //     }
         // }
+
+        def config = [:]
+        callable.resolveStrategy = Closure.DELEGATE_FIRST;
+        callable.delegate = config;
+        callable.call()
 
         node {
             stage('build') {
