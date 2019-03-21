@@ -1,7 +1,7 @@
 def call(Map config) {
         
         script {
-            var debug = true
+            def debug = true
         }
         // do something for cambricon
         echo 'Cambricon Config:'
