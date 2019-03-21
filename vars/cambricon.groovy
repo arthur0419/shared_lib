@@ -1,5 +1,6 @@
 def call(Map config) {
         
+        var debug = true
         // do something for cambricon
         echo 'Cambricon Config:'
         script {
@@ -7,7 +8,11 @@ def call(Map config) {
                 println(it.key + " : " + it.value)
                 // echo it.key + " : " + it.value
             }
+            if (config.debug) {
+                debug = config.debug
+            }
         }
+        echo "{debug}"
 
         // echo 'Cambricon build config:'
         // buildconfig.each{
