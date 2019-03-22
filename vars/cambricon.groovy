@@ -120,7 +120,12 @@ def call(Closure callable) {
                         })
                         buildStages.put('tensorflow', {
                             stage('tensorflow') {
-                                echo 'doing tensorflow test'
+                                stage('tensorflow_build') {
+                                    echo 'doing tensorflow build'
+                                }
+                                stage('tensorflow_test') {
+                                    echo 'doing tensorflow test'
+                                }
                             }
                         })
 
