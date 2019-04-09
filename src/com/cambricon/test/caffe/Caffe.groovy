@@ -4,6 +4,10 @@ import com.cambricon.test.Module
 import com.cambricon.test.Test
 
 class Caffe extends Module {
+
+    Caffe(Map config) {
+        super(config)
+    }
     
     void cloneCode() {
         println("doing clone in caffe!")
