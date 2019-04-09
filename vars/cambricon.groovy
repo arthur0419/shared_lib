@@ -16,6 +16,7 @@ def call(Closure callable) {
     if (caffe) {
         node {
             stage('caffe_build') {
+                caffe.cloneCode()
                 caffe.build()
             }
             def tests = caffe.getTests()

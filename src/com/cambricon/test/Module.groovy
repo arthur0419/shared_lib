@@ -7,7 +7,7 @@ class Module {
     Module(Map moduleConfig) {
         this.config = moduleConfig
     }
-    void clone() {
+    void cloneCode() {
         println("doing clone in Module!")
     }
 

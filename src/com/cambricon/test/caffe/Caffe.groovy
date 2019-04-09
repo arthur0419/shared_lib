@@ -5,7 +5,7 @@ import com.cambricon.test.Test
 
 class Caffe extends Module {
     
-    void clone() {
+    void cloneCode() {
         println("doing clone in caffe!")
     }
 
