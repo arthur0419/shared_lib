@@ -3,22 +3,20 @@ package com.cambricon.test.caffe
 import com.cambricon.test.Module
 import com.cambricon.test.Test
 
-def my_echo(text) {
-  echo '${text}'
-}
-
 class Caffe extends Module {
 
-    Caffe(Map config) {
+    def steps
+    Caffe(steps, Map config) {
         super(config)
+        this.steps = steps;
     }
     
     void cloneCode() {
-        my_echo('doing clone in caffe!')
+        steps.echo 'doing clone in caffe!'
     }
 
     void build() {
-        my_echo('doing build in caffe!')
+        steps.echo 'doing build in caffe!'
     }
 
     List<Test> getTests() {
