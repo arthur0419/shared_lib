@@ -1,4 +1,6 @@
-package com.cambricom.test
+package com.cambricon.test
+
+import com.cambricon.test.Test;
 
 class Module {
     Map config;
