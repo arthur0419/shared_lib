@@ -9,7 +9,7 @@ class CaffeOffline extends Test {
     }
     
     void doTest() {
-        println("doing test in caffe offline test")
+        echo 'doing test in caffe offline test'
     }
 
     String getName() {

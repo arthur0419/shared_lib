@@ -10,11 +10,11 @@ class Caffe extends Module {
     }
     
     void cloneCode() {
-        println("doing clone in caffe!")
+        echo 'doing clone in caffe!'
     }
 
     void build() {
-        println("doing build in caffe!")
+        echo 'doing build in caffe!'
     }
 
     List<Test> getTests() {
