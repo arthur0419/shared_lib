@@ -10,7 +10,6 @@ def my_echo(text) {
 class Caffe extends Module {
 
     Caffe(Map config) {
-        this.steps = steps
         super(config)
     }
     
