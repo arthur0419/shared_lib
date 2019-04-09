@@ -3,10 +3,7 @@ import com.cambricon.test.caffe.Caffe;
 def call(Closure callable) {
 
     def config = [:]
-
-
-
-    callable.resolveStrategy = Clousure.DELEGATE_FIRST;
+    callable.resolveStrategy = Closure.DELEGATE_FIRST;
     callable.delegate = config;
     callable.call()
 
