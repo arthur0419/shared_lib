@@ -4,6 +4,8 @@ def call(Closure callable) {
 
     def config = [:]
 
+
+
     callable.resolveStrategy = Clousure.DELEGATE_FIRST;
     callable.delegate = config;
     callable.call()
