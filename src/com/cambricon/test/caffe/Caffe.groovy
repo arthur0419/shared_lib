@@ -1,6 +1,6 @@
 package com.cambricon.test.caffe
 
-import com.cambrion.test.Module
+import com.cambricon.test.Module
 import com.cambricon.test.Test
 
 class Caffe extends Module {
