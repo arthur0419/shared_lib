@@ -12,6 +12,7 @@ class CaffeGTest extends Test {
     
     void doTest() {
         steps.echo 'doing test in caffe gtest'
+        println("doing println in caffe gtest")
     }
 
     String getName() {
