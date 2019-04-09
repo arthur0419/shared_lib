@@ -4,15 +4,12 @@ import com.cambricon.test.Test
 
 class CaffeGTest extends Test {
 
-    def steps
     CaffeGTest(steps, Map config) {
-        super(config)
-        this.steps = steps;
+        super(steps, config)
     }
     
     void doTest() {
         steps.echo 'doing test in caffe gtest'
-        println("doing println in caffe gtest")
     }
 
     String getName() {

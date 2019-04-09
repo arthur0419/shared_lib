@@ -5,10 +5,8 @@ import com.cambricon.test.Test
 
 class Caffe extends Module {
 
-    def steps
     Caffe(steps, Map config) {
-        super(config)
-        this.steps = steps;
+        super(steps, config)
     }
     
     void cloneCode() {

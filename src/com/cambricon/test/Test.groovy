@@ -1,10 +1,11 @@
 package com.cambricon.test
 
 class Test {
-    Map config
-    
-    Test(Map testConfig) {
+    def Map config
+    def steps
+    Test(steps, Map testConfig) {
         this.config = testConfig
+        this.steps = steps
     }
 
     void doTest() {

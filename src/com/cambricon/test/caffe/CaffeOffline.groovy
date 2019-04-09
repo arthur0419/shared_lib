@@ -4,10 +4,8 @@ import com.cambricon.test.Test
 
 class CaffeOffline extends Test {
 
-    def steps
     CaffeOffline(steps, Map config) {
-        super(config)
-        this.steps = steps;
+        super(steps, config)
     }
     
     void doTest() {

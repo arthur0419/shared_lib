@@ -3,9 +3,11 @@ package com.cambricon.test
 import com.cambricon.test.Test;
 
 class Module {
-    Map config;
-    Module(Map moduleConfig) {
+    def Map config;
+    def steps
+    Module(steps, Map moduleConfig) {
         this.config = moduleConfig
+        this.steps = steps
     }
     void cloneCode() {
         println("doing clone in Module!")
