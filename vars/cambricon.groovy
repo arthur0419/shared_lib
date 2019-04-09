@@ -9,7 +9,7 @@ def call(Closure callable) {
 
     def caffe = null
     if (config.caffe) {
-        caffe = new Caffe(config);
+        caffe = new Caffe(this, config);
     }
 
     if (caffe) {
