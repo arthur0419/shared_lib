@@ -22,7 +22,7 @@ def call(Closure callable) {
             def buildStages = [:]
             tests.each {
                 buildStages.put(it.getName(), {
-                    stage(it.getName) {
+                    stage(it.getName()) {
                         it.doTest()
                     }
                 })
