@@ -12,8 +12,11 @@ def call(Closure callable) {
         caffe = new Caffe(this, config);
     }
 
-    if (caffe) {
-        node {
+    node {
+        stage('prepare') {
+            echo 'doing prepare!'
+        }
+        if (caffe) {
             stage('caffe_build') {
                 caffe.cloneCode()
                 caffe.build()
@@ -32,6 +35,7 @@ def call(Closure callable) {
             }
         }
     }
+
 
     // def config = [:]
     // callable.resolveStrategy = Closure.DELEGATE_FIRST;
