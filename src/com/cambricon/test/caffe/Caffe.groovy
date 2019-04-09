@@ -21,8 +21,8 @@ class Caffe extends Module {
 
     List<Test> getTests() {
         List<Test> tests = new ArrayList();
-        tests.add(new CaffeGTest(config));
-        tests.add(new CaffeOffline(config));
+        tests.add(new CaffeGTest(steps, config));
+        tests.add(new CaffeOffline(steps, config));
         return tests
     }
 
