@@ -10,6 +10,7 @@ class Caffe extends Module {
     }
     
     void cloneCode() {
+        println("doing clone code for println!")
         steps.echo 'doing clone in caffe!'
     }
 
