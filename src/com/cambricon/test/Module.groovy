@@ -4,10 +4,10 @@ import com.cambricon.test.Test;
 
 class Module {
     def Map config;
-    def steps
-    Module(steps, Map moduleConfig) {
+    def script
+    Module(script, Map moduleConfig) {
         this.config = moduleConfig
-        this.steps = steps
+        this.script = script
     }
     void cloneCode() {
         println("doing clone in Module!")

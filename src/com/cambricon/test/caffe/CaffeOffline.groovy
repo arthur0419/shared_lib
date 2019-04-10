@@ -4,12 +4,12 @@ import com.cambricon.test.Test
 
 class CaffeOffline extends Test {
 
-    CaffeOffline(steps, Map config) {
-        super(steps, config)
+    CaffeOffline(script, Map config) {
+        super(script, config)
     }
     
     void doTest() {
-        steps.echo 'doing test in caffe offline test'
+        script.echo 'doing test in caffe offline test'
     }
 
     String getName() {

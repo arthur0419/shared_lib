@@ -5,23 +5,23 @@ import com.cambricon.test.Test
 
 class Caffe extends Module {
 
-    Caffe(steps, Map config) {
-        super(steps, config)
+    Caffe(script, Map config) {
+        super(script, config)
     }
     
     void cloneCode() {
         println("doing clone code for println!")
-        steps.echo 'doing clone in caffe!'
+        script.echo 'doing clone in caffe!'
     }
 
     void build() {
-        steps.echo 'doing build in caffe!'
+        script.echo 'doing build in caffe!'
     }
 
     List<Test> getTests() {
         List<Test> tests = new ArrayList();
-        tests.add(new CaffeGTest(steps, config));
-        tests.add(new CaffeOffline(steps, config));
+        tests.add(new CaffeGTest(script, config));
+        tests.add(new CaffeOffline(script, config));
         return tests
     }
 

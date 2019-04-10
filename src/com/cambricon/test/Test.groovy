@@ -2,8 +2,8 @@ package com.cambricon.test
 
 class Test {
     def Map config
-    def steps
-    Test(steps, Map testConfig) {
+    def script
+    Test(script, Map testConfig) {
         this.config = testConfig
         this.steps = steps
     }
