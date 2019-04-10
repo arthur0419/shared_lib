@@ -14,6 +14,7 @@ def call(Closure callable) {
 
     node {
         stage('prepare') {
+            println("doing prepare for print!")
             echo 'doing prepare!'
         }
         if (caffe) {
