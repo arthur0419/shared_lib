@@ -10,7 +10,7 @@ class CaffeGTest extends Test {
     
     void doTest() {
         script.echo 'doing test in caffe gtest'
-        script.echo 'hello world ${config.username}'
+        script.echo "hello world ${config.username}"
     }
 
     String getName() {
