@@ -12,6 +12,10 @@ def call(Closure callable) {
         caffe = new Caffe(this, config);
     }
 
+    config.each {
+        println(it.key + " : " + it.value)
+    }
+
     node {
         stage('prepare') {
             println("doing prepare for print!")
