@@ -5,7 +5,7 @@ class Test {
     def script
     Test(script, Map testConfig) {
         this.config = testConfig
-        this.steps = steps
+        this.script = script
     }
 
     void doTest() {
