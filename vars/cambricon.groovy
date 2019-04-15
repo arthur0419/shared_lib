@@ -17,13 +17,22 @@ def call(Closure callable) {
     }
 
     node {
+
+        properties([
+            parameters([
+                stringParam(
+                defaultValue: 'arthur',
+                description: 'visitor name',
+                name: 'visitor'
+                ),
+            ])
+        ])
+
         echo "PROPERTIES"
         echo "=========="
         properties.each{ k, v -> 
             println "${k} ${v}" 
         }
-        echo properties
-        echo properties["class"].getName()
 
         echo "ENVIRONMENT VARIABLES"
         echo "======================"
