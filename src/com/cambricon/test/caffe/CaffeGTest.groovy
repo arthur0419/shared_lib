@@ -9,7 +9,15 @@ class CaffeGTest extends Test {
     }
     
     void doTest() {
+        
         script.echo 'doing test in caffe gtest'
+
+        def methods = script.getMetaClass().getMethods()
+
+        for (method in methods) {
+            script.echo method.getName()
+        }
+
         script.echo "hello world ${config.properties.visitor}"
     }
 
