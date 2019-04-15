@@ -18,15 +18,15 @@ def call(Closure callable) {
 
     node {
 
-        properties([
-            parameters([
-                stringParam(
-                defaultValue: 'arthur',
-                description: 'visitor name',
-                name: 'visitor'
-                ),
-            ])
-        ])
+        // properties([
+        //     parameters([
+        //         stringParam(
+        //         defaultValue: 'arthur',
+        //         description: 'visitor name',
+        //         name: 'visitor'
+        //         ),
+        //     ])
+        // ])
 
         echo "PROPERTIES"
         echo "=========="
