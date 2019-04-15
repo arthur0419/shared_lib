@@ -17,6 +17,23 @@ def call(Closure callable) {
     }
 
     node {
+        echo "PROPERTIES"
+        echo "=========="
+        properties.each{ k, v -> 
+            println "${k} ${v}" 
+        }
+        echo properties
+        echo properties["class"].getName()
+
+        echo "ENVIRONMENT VARIABLES"
+        echo "======================"
+        echo "env is " + env.getClass().getName()
+        def envvars = env.getEnvironment()
+        envvars.each{ k, v ->
+            println "${k} ${v}"
+        }
+
+
         stage('prepare') {
             println("doing prepare for print!")
             echo 'doing prepare!'
