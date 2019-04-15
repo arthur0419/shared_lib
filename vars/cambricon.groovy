@@ -6,6 +6,7 @@ def call(Closure callable) {
     callable.resolveStrategy = Closure.DELEGATE_FIRST;
     callable.delegate = config;
     callable.call()
+    config.username = params.visitor
 
     def caffe = null
     if (config.caffe) {
@@ -42,7 +43,7 @@ def call(Closure callable) {
         //     println "${k} ${v}"
         // }
 
-
+        
         stage('prepare') {
             println("doing prepare for print!")
             echo 'doing prepare!'
