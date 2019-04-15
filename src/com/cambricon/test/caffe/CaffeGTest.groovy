@@ -12,11 +12,11 @@ class CaffeGTest extends Test {
         
         script.echo 'doing test in caffe gtest'
 
-        def methods = script.getMetaClass().getMethods()
+        // def methods = script.getMetaClass().getMethods()
 
-        for (method in methods) {
-            script.echo method.getName()
-        }
+        // for (method in methods) {
+        //     script.echo method.getName()
+        // }
 
         script.echo "hello world ${script.params.visitor}"
     }

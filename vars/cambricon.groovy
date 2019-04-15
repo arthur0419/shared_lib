@@ -28,19 +28,19 @@ def call(Closure callable) {
         //     ])
         // ])
 
-        echo "PROPERTIES"
-        echo "=========="
-        properties.each{ k, v -> 
-            println "${k} ${v}" 
-        }
+        // echo "PROPERTIES"
+        // echo "=========="
+        // properties.each{ k, v -> 
+        //     println "${k} ${v}" 
+        // }
 
-        echo "ENVIRONMENT VARIABLES"
-        echo "======================"
-        echo "env is " + env.getClass().getName()
-        def envvars = env.getEnvironment()
-        envvars.each{ k, v ->
-            println "${k} ${v}"
-        }
+        // echo "ENVIRONMENT VARIABLES"
+        // echo "======================"
+        // echo "env is " + env.getClass().getName()
+        // def envvars = env.getEnvironment()
+        // envvars.each{ k, v ->
+        //     println "${k} ${v}"
+        // }
 
 
         stage('prepare') {
