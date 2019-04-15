@@ -18,7 +18,7 @@ class CaffeGTest extends Test {
             script.echo method.getName()
         }
 
-        script.echo "hello world ${config.properties.visitor}"
+        script.echo "hello world ${config.env.visitor}"
     }
 
     String getName() {
