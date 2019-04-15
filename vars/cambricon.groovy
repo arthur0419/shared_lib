@@ -7,6 +7,8 @@ def call(Closure callable) {
     callable.delegate = config;
     callable.call()
     config.username = params.visitor
+    println("visitor is ${params.visitor}")
+    println("another name is ${params.anothername}")
 
     def caffe = null
     if (config.caffe) {
